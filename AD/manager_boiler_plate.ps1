@@ -1,4 +1,4 @@
-<# Charles Witherspoon | Divisional IT Infrastructure Engineer | ASSA Abloy
+<# Charles Witherspoon
  
 Description: Performs bulk password resets from users in "today.txt" file. Based on requirements from SECOPS / SOC departments. 
 Utalizes sourceType variable to flip from "samaccountname","UserPrincipalName", or etc to provide the necessary property in AD. 
@@ -6,7 +6,7 @@ Utalizes sourceType variable to flip from "samaccountname","UserPrincipalName", 
 v.03
  
 Prerequsites: 
-- The account running the script will need to have send on behalf of permissions from "do.not.reply@assaabloy.com"
+- The account running the script will need to have send on behalf of permissions from 
 - You will need access to active directory from some account (RSAT tools)
  
 Instruction:
@@ -68,8 +68,7 @@ If you have any questions or concerns, please contact your local helpdesk.
 </br>
 </br>
 Respectfully,</br> 
-Secops Team</br>
-AAES Divisional IT Infrastructure</br>
+
 "@
  
     return $_HTMLBODY -replace "{MANAGER}", $Manager -replace "{EMPLOYEE}", $Employee
@@ -94,7 +93,7 @@ foreach ($pw0nedAccount in $pw0n3dAccounts) {
             BodyAsHtml = $TRUE
             Port       = "25"
             SmtpServer = $Relay
-            BCC        = "Charles.Witherspoon@assaabloy.com"
+            BCC        = ""
         }
         Send-MailMessage @MailData 
         sleep 3
