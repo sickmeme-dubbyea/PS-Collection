@@ -32,4 +32,3 @@ foreach ($item in $jsonObject) {
     Add-ADPrincipalGroupMembership -Identity $item.NEWSAM -MemberOf $prev.MemberOf
 }
 
-has context menu
